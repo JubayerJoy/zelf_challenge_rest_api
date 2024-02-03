@@ -1,0 +1,24 @@
+# Ignore virtual environment
+venv/
+*.pyc
+__pycache__/
+
+# Ignore Django settings file
+*.pyc
+*.pyo
+*.env
+
+
+# Ignore local development settings
+local_settings.py
+
+# Ignore IDE and editor files
+.idea/
+.vscode/
+
+# Ignore migration files
+*/migrations/*.py
+*/migrations/*.pyc
+
+# Ignore ENV in the zelf_challenges folder
+zelf_challenge_rest_api/.env
