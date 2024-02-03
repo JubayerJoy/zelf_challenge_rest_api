@@ -19,6 +19,3 @@ local_settings.py
 # Ignore migration files
 */migrations/*.py
 */migrations/*.pyc
-
-# Ignore ENV in the zelf_challenges folder
-zelf_challenge_rest_api/.env
