@@ -5,7 +5,8 @@ from datetime import datetime
 
 import redis
 from decouple import config
-from utils import api_call, get_author_details, get_content_list
+
+from api.utils import get_author_details, get_content_list
 
 REDIS_HOST = config("REDIS_HOST")
 REDIS_PORT = config("REDIS_PORT")
@@ -32,9 +33,6 @@ def fetch_and_store_data():
             for content in contents:
                 author_id = content["author"]["id"]
                 unique_authors.add(author_id)
-
-            # TODO: pick 3 random authors
-            unique_authors = list(unique_authors)[:3]
 
             # fetch author details
             authors = []

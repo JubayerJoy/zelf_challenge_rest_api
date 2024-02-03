@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  django_app:
+    build:
+      context: ./zelf_challenge_rest_api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./zelf_challenge_rest_api:/app
+    depends_on:
+      - redis
+    command: python manage.py runserver 0.0.0.0:8000
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  cron_job:
+    build:
+      context: ./cron_job
+    volumes:
+      - ./cron_job:/app
+    depends_on:
+      - redis
+    command: python fetch_data.py

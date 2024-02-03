@@ -2,7 +2,8 @@ import time
 
 import requests
 from decouple import config
-from rate_limiter import RateLimiter, RateLimitExceededException
+
+from api.rate_limiter import RateLimiter, RateLimitExceededException
 
 CAPACITY = int(config("CAPACITY"))
 REFILL_RATE = CAPACITY / int(config("REFILL_TIME"))

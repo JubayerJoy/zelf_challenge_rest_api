@@ -41,7 +41,11 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "api",
 ]
+
+CELERY_BROKER_URL = "redis://localhost:6379/0"
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
