@@ -1,0 +1,32 @@
+exclude: .*migrations\/.*
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-json
+      - id: check-xml
+      - id: check-toml
+      - id: check-symlinks
+      - id: check-case-conflict
+      - id: check-byte-order-marker
+      - id: check-ast
+      - id: check-executables-have-shebangs
+
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: 23.9.1
+    hooks:
+      - id: black
+        language_version: python3.11.5
+
+  - repo: https://github.com/pycqa/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: isort (python)
