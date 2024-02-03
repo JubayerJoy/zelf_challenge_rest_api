@@ -43,7 +43,7 @@ def api_call(invoker_name, url, headers):
                     f"Rate limit reached. Waiting for {RETRY_DELAY} second(s) before making another request from {invoker_name} to {url}"
                 )
         except Exception as e:
-            print(f"Error: {e} {response}")
+            print(f"Error: {e}")
             retry_count += 1
             if retry_count <= MAX_RETRIES:
                 print(
